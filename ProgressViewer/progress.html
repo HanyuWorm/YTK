@@ -1,0 +1,39 @@
+<style>
+    .font-10 {
+        font-size: 10px;
+    }
+</style>
+<div ng-controller="ProgressController">
+    <div class="container">
+            <div class="jumbotron" style="padding-top: 20px; padding-bottom: 10px;">
+                <div class="container">
+                    <h2>{{project.name}}</h2>
+                    <h3>website: {{project.website}}</h3>
+                    <h4>Start chapter: {{project.start_chapter}}</h3>
+                    <h4>Lastest chapter: {{project.lastest_chapter}}</h3>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Crawler ({{count.crawler}} / {{project.lastest_chapter - project.start_chapter + 1}})</th>
+                    <th>Image ({{percent.crawler}} % 100)</th>
+                    <th>Audio ({{count.audio}} / {{project.lastest_chapter - project.start_chapter  + 1}})</th>
+                    <th>Video ({{percent.crawler}} % 100)</th>
+                    <th>Youtube Upload ({{percent.crawler}} % 100)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in progress">
+                    <td>{{item.chapter}}</td>
+                    <td ng-bind-html="item.crawler"></td>
+                    <td>Doe</td>
+                    <td ng-bind-html="item.audio"></td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+            </tbody>
+        </table>
+</div>

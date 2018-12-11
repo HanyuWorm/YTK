@@ -1,0 +1,22 @@
+{
+    "mao-son-troc-quy-nhan": {
+        "name" : "mao-son-troc-quy-nhan",
+        "url" : "mao-son-troc-quy-nhan",
+        "website" : "truyenfull.vn",
+        "start_chapter" : 1,
+        "lastest_chapter": 1520,
+        "current_chapter": 0,
+        "end_chapter": null,
+        "chapter_per_video": 10
+    }, 
+    "bach-bao-tong-quan": {
+        "name" : "bach-bao-tong-quan",
+        "url" : "bach-bao-tong-quan",
+        "website" : "truyenfull.vn",
+        "start_chapter" : 1,
+        "lastest_chapter": 760,
+        "current_chapter": 0,
+        "end_chapter": null,
+        "chapter_per_video": 10
+    }
+}
