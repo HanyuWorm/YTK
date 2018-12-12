@@ -1,4 +1,50 @@
 {
+    "muc-than-ky": {
+        "name" : "muc-than-ky",
+        "url" : "muc-than-ky",
+        "website" : "truyen.tangthuvien.vn",
+        "start_chapter" : 1,
+        "lastest_chapter": 1190,
+        "current_chapter": 0,
+        "end_chapter": null,
+        "chapter_per_video": 10,
+		
+		"image": {
+            "name": "image.jpg",
+			"font_family" : "arial.ttf",
+			"font_size" : 65,
+			"x" : 20,
+            "y" : 50,
+            "color": {
+                "r": 255,
+                "g": 65,
+                "b": 44
+            }
+		}
+    },
+    "thien-dao-do-thu-quan": {
+        "name" : "thien-dao-do-thu-quan",
+        "url" : "thien-dao-do-thu-quan",
+        "website" : "truyen.tangthuvien.vn",
+        "start_chapter" : 1,
+        "lastest_chapter": 1703,
+        "current_chapter": 0,
+        "end_chapter": null,
+        "chapter_per_video": 10,
+		
+		"image": {
+            "name": "image.jpg",
+			"font_family" : "arial.ttf",
+			"font_size" : 65,
+			"x" : 20,
+            "y" : 50,
+            "color": {
+                "r": 255,
+                "g": 65,
+                "b": 44
+            }
+		}
+    },
     "mao-son-troc-quy-nhan": {
         "name" : "mao-son-troc-quy-nhan",
         "url" : "mao-son-troc-quy-nhan",
@@ -7,7 +53,20 @@
         "lastest_chapter": 1520,
         "current_chapter": 0,
         "end_chapter": null,
-        "chapter_per_video": 10
+        "chapter_per_video": 10,
+		
+		"image": {
+            "name": "image.jpg",
+			"font_family" : "arial.ttf",
+			"font_size" : 65,
+			"x" : 20,
+            "y" : 50,
+            "color": {
+                "r": 255,
+                "g": 65,
+                "b": 44
+            }
+		}
     }, 
     "bach-bao-tong-quan": {
         "name" : "bach-bao-tong-quan",
@@ -17,6 +76,43 @@
         "lastest_chapter": 760,
         "current_chapter": 0,
         "end_chapter": null,
-        "chapter_per_video": 10
+        "chapter_per_video": 10,
+		
+		"image": {
+            "name": "image.jpg",
+			"font_family" : "arial.ttf",
+			"font_size" : 65,
+			"x" : 20,
+            "y" : 50,
+            "color": {
+                "r": 255,
+                "g": 65,
+                "b": 44
+            }
+		}
+    }, 
+    "12-nu-than": {
+        "name" : "12-nu-than",
+        "url" : "12-nu-than",
+        "website" : "truyensex.tv",
+        "start_chapter" : 1,
+        "lastest_chapter": 200,
+        "current_chapter": 0,
+        "end_chapter": null,
+        "chapter_per_video": 10,
+		
+		"image": {
+            "name": "image.jpg",
+			"font_family" : "arial.ttf",
+			"font_size" : 65,
+			"x" : 20,
+            "y" : 300,
+            "color": {
+                "r": 255,
+                "g": 65,
+                "b": 44
+            }
+		}
     }
+
 }

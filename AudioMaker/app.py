@@ -27,6 +27,10 @@ elif command == 'download':
 	download(short_direct, voice, speed, prosody)
 elif command == 'merge_files':
 	merge_files(short_direct)
+elif command == 'start_end':
+	start_end(short_direct, voice, speed, prosody)
+elif command == 'concat':
+	concat(short_direct, int(voice), int(speed), int(prosody))
 else:
 	run_all(short_direct, voice, speed, prosody)
         

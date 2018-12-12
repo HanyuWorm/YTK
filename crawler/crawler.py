@@ -1,6 +1,4 @@
-import sys
 import os
-from lib import *
 import sys
 import json
 import subprocess
