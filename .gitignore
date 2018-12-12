@@ -2,3 +2,12 @@ data/
 config.json
 AudioMaker/keys.txt
 AudioMaker/audio_maker*
+AudioMaker/audio_maker.py
+AudioMaker/audio_maker2.py
+AudioMaker/audio_maker3.py
+AudioMaker/audio_maker4.py
+AudioMaker/audio_maker5.py
+AudioMaker/keys.txt
+AudioMaker/lib.py
+config.json
+crawler/crawler.py
