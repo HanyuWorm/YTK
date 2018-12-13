@@ -28,7 +28,7 @@ def draw_image(start_chapter, end_chapter , path, image_name, font_family, font_
         os.mkdir(f'{path}chuong-{start_chapter}-{end_chapter}')
     image.save(f"{path}chuong-{start_chapter}-{end_chapter}/chuong-{start_chapter}-{end_chapter}.png","PNG")
 
-with open('../config.json') as json_data:
+with open('../config.json', encoding="utf-8") as json_data:
     data = json.load(json_data)
     data = dict(data)
     print(data)

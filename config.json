@@ -382,17 +382,18 @@
         "url" : "tao-hoa-chi-vuong",
         "website" : "truyen.tangthuvien.vn",
         "start_chapter" : 1,
-        "lastest_chapter": 2689,
+        "lastest_chapter": 2698,
         "current_chapter": 0,
         "end_chapter": null,
         "chapter_per_video": 10,
+        "voice": "hatieumai",
 		
 		"image": {
-            "name": "image.png",
+            "name": "image.jpg",
 			"font_family" : "arial.ttf",
-			"font_size" : 65,
-			"x" : 20,
-            "y" : 80,
+			"font_size" : 60,
+			"x" : 15,
+            "y" : 40,
             "color": {
                 "r": 255,
                 "g": 65,

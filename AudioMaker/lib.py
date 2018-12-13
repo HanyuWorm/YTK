@@ -212,11 +212,11 @@ def concat(short_direct, start, end, step):
 			print('create list.txt successful')
 			p = subprocess.run('ffmpeg -f concat -safe 0 -i {}/list.txt -c copy {}/full.mp3'.format(direc, direc))
 		
-		# if os.path.exists(f'{direc}/out.mp3'):
-		# 	print('out.mp3 EXIST')
-		# else:
-		# 	shutil.copy(f'{short_direct}/background.mp3', f'{direc}/background.mp3')
-		# 	p = subprocess.run(f'ffmpeg -i {direc}/full.mp3 -filter_complex "amovie={direc}/background.mp3:loop=0,asetpts=N/SR/TB[beep];[0][beep]amix=duration=shortest,volume=10,dynaudnorm" {direc}/out.mp3')
+		if os.path.exists(f'{direc}/out.mp3'):
+			print('out.mp3 EXIST')
+		else:
+			shutil.copy(f'{short_direct}/background.mp3', f'{direc}/background.mp3')
+			p = subprocess.run(f'ffmpeg -i {direc}/full.mp3 -filter_complex "amovie={direc}/background.mp3:loop=0,asetpts=N/SR/TB[beep];[0][beep]amix=duration=shortest,volume=10,dynaudnorm" {direc}/out.mp3')
 
 
 		remove_files(direc)
