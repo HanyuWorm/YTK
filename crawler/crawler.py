@@ -16,7 +16,8 @@ try:
 except:
 	pass
 
-with open('config.json') as json_data:
+with open('config.json', encoding="utf-8") as json_data:
+    print(json_data)
     data = json.load(json_data)
     data = dict(data)
     print(data)

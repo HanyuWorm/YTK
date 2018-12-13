@@ -27,13 +27,21 @@ app.controller('ProjectController', function($scope, $location) {
         state.project = project;
         $location.url('/progress');
     }
-    fs.readdir('./../data', function(err, items) {
-        for (var i=0; i<items.length; i++) {
-            item = items[i];
-            $scope.projects.push(item);
-        }
+    // fs.readdir('./../data', function(err, items) {
+    //     for (var i=0; i<items.length; i++) {
+    //         item = items[i];
+    //         $scope.projects.push(item);
+    //     }
+    //     $scope.$apply();
+    // });
+
+    fs.readFile(`./../config.json`, 'utf8', function(err, data) {
+        // Object.keys()
+        $scope.projects = JSON.parse(data)
+        // console.log($scope.project);
         $scope.$apply();
     });
+
 })
 app.controller('ProgressController', function($scope, $location) {
     $scope.project = {};

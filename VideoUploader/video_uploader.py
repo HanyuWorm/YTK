@@ -156,7 +156,7 @@ if __name__ == '__main__':
   client = get_authenticated_service()
   
   start = 1
-  end = 60
+  end = 132
   step = 10
   for i in range(start, end + 1, step):
     start_chapter = i
@@ -165,18 +165,18 @@ if __name__ == '__main__':
     else:
         end_chapter = end
 
-    media_file = '../data/12-nu-than/chuong-'+str(start_chapter)+'-'+str(end_chapter)+'/out.mp4'
+    media_file = '../data/cau-chuyen-doi-toi/chuong-'+str(start_chapter)+'-'+str(end_chapter)+'/out.mp4'
     if not os.path.exists(media_file):
             exit('Please specify a valid file location.')
     videos_insert(client, 
         {'snippet.categoryId': '10',
         'snippet.defaultLanguage': '',
-        'snippet.description': '[Giọng nữ + truyện 18+] 12 nữ thần Chương '+str(i)+'. truyenaudiogiaitri.tk',
+        'snippet.description': '[Truyện 18+] Câu chuyện đời tôi '+ str(start_chapter)+' - '+str(end_chapter)+'. truyenaudiogiaitri.tk',
         'snippet.tags[]': '',
-        'snippet.title': '[Giọng nữ + truyện 18+] 12 nữ thần Chương ' + str(start_chapter)+' - '+str(end_chapter),
+        'snippet.title': '[Truyện 18+] Câu chuyện đời tôi ' + str(start_chapter)+' - '+str(end_chapter),
         'status.embeddable': '',
         'status.license': '',
-        'status.privacyStatus': 'private',
+        'status.privacyStatus': '',
         'status.publicStatsViewable': ''},
         media_file,
         part='snippet,status')

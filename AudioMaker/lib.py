@@ -131,6 +131,8 @@ def download(short_direct, voice=voice, speed=speed, prosody=prosody):
 	count = 0
 
 	for i in range(len(wraptexts)):
+		if os.path.exists("{}{:03}.mp3".format(direc, i)):
+			continue
 		while True:
 			try:
 				if count >= 50:
@@ -158,7 +160,7 @@ def download(short_direct, voice=voice, speed=speed, prosody=prosody):
 						break
 					except:
 						count2 += 1
-						time.sleep(0.1)
+						time.sleep(1)
 				if count2 == 0:
 					break
 			except :
@@ -223,7 +225,7 @@ def concat(short_direct, start, end, step):
 	
 def run_all(short_direct, voice=voice, speed=speed, prosody=prosody):
 	if backup(short_direct):
-		remove_files(short_direct)
+		# remove_files(short_direct)
 		result = download(short_direct, voice, speed, prosody)
 		if result:
 			merge_files(short_direct)

@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import subprocess
+import threading
 args = sys.argv
 
 
@@ -18,5 +19,10 @@ try:
 except:
 	pass
 
-for i in range(start, end + 1):
+def run_all(i):
     subprocess.run(f"python app.py run_all ../data/{name}/chuong-{i} {voice} -1 0")
+
+for i in range(start, end + 1):
+    threading.Thread(target=run_all, args=([i])).start()
+	# t2 = threading.Thread(target=cal_cube, args=(arr,))
+    # subprocess.run(f"python app.py run_all ../data/{name}/chuong-{i} {voice} -1 0")
