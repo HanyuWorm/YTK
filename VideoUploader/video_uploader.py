@@ -155,25 +155,31 @@ if __name__ == '__main__':
   os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
   client = get_authenticated_service()
   
-  start = 1
-  end = 132
+  start = 211
+  end = 500
   step = 10
   for i in range(start, end + 1, step):
+
+    
     start_chapter = i
     if  i + step - 1 < end:
         end_chapter = i + step - 1
     else:
         end_chapter = end
 
-    media_file = '../data/cau-chuyen-doi-toi/chuong-'+str(start_chapter)+'-'+str(end_chapter)+'/out.mp4'
+    des = ''
+    for chap in range(start_chapter, end_chapter + 1):
+      des += (', ' + str(chap))
+
+    media_file = '../data/tao-hoa-chi-vuong/chuong-'+str(start_chapter)+'-'+str(end_chapter)+'/out.mp4'
     if not os.path.exists(media_file):
             exit('Please specify a valid file location.')
     videos_insert(client, 
         {'snippet.categoryId': '10',
         'snippet.defaultLanguage': '',
-        'snippet.description': '[Truyện 18+] Câu chuyện đời tôi '+ str(start_chapter)+' - '+str(end_chapter)+'. truyenaudiogiaitri.tk',
+        'snippet.description': 'Truyện Audio Tạo hóa chi vương '+ des +'. truyenaudiogiaitri.tk',
         'snippet.tags[]': '',
-        'snippet.title': '[Truyện 18+] Câu chuyện đời tôi ' + str(start_chapter)+' - '+str(end_chapter),
+        'snippet.title': 'Tạo hóa chi vương ' + str(start_chapter)+' - '+str(end_chapter),
         'status.embeddable': '',
         'status.license': '',
         'status.privacyStatus': '',
