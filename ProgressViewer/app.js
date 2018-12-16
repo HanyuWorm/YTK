@@ -143,7 +143,7 @@ app.controller('ProgressController', function($scope, $location) {
             }
 
             item.audio_concat = '';
-            if(listdir.indexOf(('chuong-'+start+'-'+end)) >= 0 && fs.readdirSync('./../data/' + project + '/chuong-'+start+'-'+end).indexOf('full.mp3') >= 0) {
+            if(listdir.indexOf(('chuong-'+start+'-'+end)) >= 0 && (fs.readdirSync('./../data/' + project + '/chuong-'+start+'-'+end).indexOf('full.mp3') >= 0) || (fs.readdirSync('./../data/' + project + '/chuong-'+start+'-'+end).indexOf('full.wav') >= 0)) {
                 item.audio_concat = '<span class="badge badge-success">Yes</span>';
                 $scope.count.audio_concat += 1;
             } else {

@@ -148,16 +148,21 @@ def videos_insert(client, properties, media_file, **kwargs):
   # See full sample for function
   return resumable_upload(request, 'video', 'insert')
 
-
+import sys
+args = sys.argv
 if __name__ == '__main__':
-  # When running locally, disable OAuthlib's HTTPs verification. When
+  try:
+    name = args[1]
+    start = int(args[2])
+    end = int(args[3])
+    step= int(args[4])
+  except:
+    pass
+   # When running locally, disable OAuthlib's HTTPs verification. When
   # running in production *do not* leave this option enabled.
   os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
   client = get_authenticated_service()
-  
-  start = 211
-  end = 500
-  step = 10
+
   for i in range(start, end + 1, step):
 
     
@@ -171,15 +176,15 @@ if __name__ == '__main__':
     for chap in range(start_chapter, end_chapter + 1):
       des += (', ' + str(chap))
 
-    media_file = '../data/tao-hoa-chi-vuong/chuong-'+str(start_chapter)+'-'+str(end_chapter)+'/out.mp4'
+    media_file = '../data/'+name+'/chuong-'+str(start_chapter)+'-'+str(end_chapter)+'/out.mp4'
     if not os.path.exists(media_file):
             exit('Please specify a valid file location.')
     videos_insert(client, 
         {'snippet.categoryId': '10',
         'snippet.defaultLanguage': '',
-        'snippet.description': 'Truyện Audio Tạo hóa chi vương '+ des +'. truyenaudiogiaitri.tk',
+        'snippet.description': 'Truyện Audio Hệ thống đi lạc tu tiên ký '+ des +'. truyenaudiogiaitri.tk. Câu chuyện này do chính tác giả người Việt Nam tự sáng tác. Nam chính có tên là Trần Tùng vốn là 1 thanh niên Việt Nam lại may mắn nhanh chân đuổi kịp trào lưu xuyên việt đến 1 cái tên là Triệu Vô Cực tiểu hài trên thân, nhưng vui mừng chưa bao lâu thì hắn khổ bức phát hiện ra hệ thống đại thần của hắn đi lạc. Trần Tùng chỉ có thể lấy cần cù bù hệ thống chăm chỉ tu luyện để đi đến nhân sinh đỉnh phong, nhưng hắn lại lần thứ 2 khổ bức phát hiện hư hư thực thực có người trong môn phái có đc hệ thống mà người này không cùng 1 trận tuyến với hắn truyện là luyện công lưu,k hệ thống k bàn tay vàng NV9 có phụ có mẫu k phải phế vật lưu,vô địch lưu. CÓ mĩ nữ có nhiệt huyết có tình huynh đệ cũng có một ít trang bức đánh mặt. tình tiết truyện phát triển khá chậm miêu tả kĩ quá trình lột xác trưởng thành tâm lí và ngộ đạo của nv9 ',
         'snippet.tags[]': '',
-        'snippet.title': 'Tạo hóa chi vương ' + str(start_chapter)+' - '+str(end_chapter),
+        'snippet.title': '[Tác giả VN]Hệ thống đi lạc tu tiên ký ' + str(start_chapter)+' - '+str(end_chapter),
         'status.embeddable': '',
         'status.license': '',
         'status.privacyStatus': '',
