@@ -1,5 +1,6 @@
 import scrapy
 import os
+import re
 class TruyenTangThuVienSpider(scrapy.Spider):
     name = "truyen.tangthuvien.vn"
     url = "https://truyen.tangthuvien.vn/doc-truyen"
@@ -31,6 +32,10 @@ class TruyenTangThuVienSpider(scrapy.Spider):
         
         title = ' '.join(response.css('body > div.container.body-container > div > div.col-xs-12.chapter > h2 ::text').extract())
         content = '. '.join(response.css('body > div.container.body-container > div > div.col-xs-12.chapter > div.chapter-c.max900 > div > div:nth-child(3) ::text').extract())
+        content = re.sub('Chuyện hay nên t đề cử.*',  '', content) 
+        content = re.sub('( .  . Siêu phẩm đô thi.*',  '', content) 
+        
+
         with open(text_file, 'w', encoding='utf-8') as f:
             f.write(content)
         with open(title_file, 'w', encoding='utf-8') as f:

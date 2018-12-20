@@ -18,7 +18,7 @@ except:
 	pass
 
 def draw_image(start_chapter, end_chapter , path, image_name, font_family, font_size, x, y, color):
-    text = f'{start_chapter}-{end_chapter}'
+    text = f'Chương {start_chapter}-{end_chapter}'
     image = Image.open(path + image_name)
     font_type=ImageFont.truetype(font_family, font_size)
     draw = ImageDraw.Draw(image)

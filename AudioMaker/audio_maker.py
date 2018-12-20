@@ -74,7 +74,7 @@ class ThreadPool:
 
 
 def run_all(i):
-    subprocess.run(f"python app.py run_all ../data/{name}/chuong-{i} {voice} -2 0")
+    subprocess.run(f"python app.py run_all ../data/{name}/chuong-{i} {voice} -1 0")
 
 pool = ThreadPool(5)
 pool.map(run_all, range(start, end + 1))

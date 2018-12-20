@@ -50,9 +50,9 @@
     "mao-son-troc-quy-nhan": {
         "name" : "mao-son-troc-quy-nhan",
         "url" : "mao-son-troc-quy-nhan",
-        "website" : "truyenfull.vn",
+        "website" : "truyencv.com",
         "start_chapter" : 1,
-        "lastest_chapter": 1520,
+        "lastest_chapter": 3000,
         "current_chapter": 0,
         "end_chapter": null,
         "chapter_per_video": 10,
@@ -60,13 +60,13 @@
 		"image": {
             "name": "image.jpg",
 			"font_family" : "arial.ttf",
-			"font_size" : 65,
-			"x" : 20,
-            "y" : 50,
+			"font_size" : 120,
+			"x" : 200,
+            "y" : 180,
             "color": {
-                "r": 255,
-                "g": 65,
-                "b": 44
+                "r": 200,
+                "g": 255,
+                "b": 30
             }
 		}
     }, 

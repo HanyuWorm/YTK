@@ -135,24 +135,30 @@ app = TextToSpeech(subscription_key)
 def backup(short_direct):
 	try:
 		direc = '{}/'.format(short_direct)
+		print(not os.path.exists(short_direct))
 		
 		if not os.path.exists(short_direct):
+			# print('???')
 			os.mkdir(short_direct)
+			# print(short_direct)
 		
-		if 'full.mp3' in os.listdir('{}'.format(direc)):
-			print(f'{direc}full.mp3 EXIST')
-			return False
-			#create folder backup if not exists
-			if 'backup' not in os.listdir('{}'.format(direc)):
-				os.mkdir('{}backup'.format(direc))
+		# if 'full.mp3' in os.listdir('{}'.format(direc)):
+		# 	print(f'{direc}full.mp3 EXIST')
+		# 	return False
+		# 	#create folder backup if not exists
+		# 	if 'backup' not in os.listdir('{}'.format(direc)):
+		# 		os.mkdir('{}backup'.format(direc))
 			
-			now = str(datetime.datetime.now()).replace(" ", "_").replace(":", "_")
-			os.rename("{}full.mp3".format(direc), "{}backup/{}.mp3".format(direc, now))
-			print('backup file full mp3 to {}backup/{}.mp3'.format(direc, now))
-
+		# 	now = str(datetime.datetime.now()).replace(" ", "_").replace(":", "_")
+		# 	os.rename("{}full.mp3".format(direc), "{}backup/{}.mp3".format(direc, now))
+		# 	print('backup file full mp3 to {}backup/{}.mp3'.format(direc, now))
+		# print('True')
+		# return False
 		return True	
 	except:
+		print('False')
 		pass
+
 	
 def remove_files(short_direct):
 	direc = '{}/'.format(short_direct)
@@ -243,7 +249,7 @@ def download(short_direct, voice=voice, speed=speed, prosody=prosody):
 	direc = '{}/'.format(short_direct)
 	title = open("{}.title".format(short_direct), "r", encoding="utf-8") 
 	file = open("{}.txt".format(short_direct), "r", encoding="utf-8") 
-	content = title.read() + ' . , . , . .' + file.read()
+	content = title.read() + ' . . , . . , . . .' + file.read()
 	wraptexts = wrap(content, 480)
 
 	if voice == 'an':
@@ -348,6 +354,7 @@ def merge_files(short_direct):
 def concat(short_direct, start, end, step):
 
 	short_direct = f'../data/{short_direct}'
+	is_first = True
 	for i in range(start, end + 1, step):
 		start_chapter = i
 		if  i + step - 1 < end:
@@ -356,32 +363,55 @@ def concat(short_direct, start, end, step):
 			end_chapter = end
 
 		
+		
 		direc = f'{short_direct}/chuong-{start_chapter}-{end_chapter}'
 
-		# if os.path.exists(f'{direc}/full.mp3'):
-		# 	print(f'chuong-{start_chapter}-{end_chapter} full.mp3 EXIST')
-		# else:
-			# f = open("{}/list.txt".format(direc), "w")
-			# shutil.copy(f'{short_direct}/start.mp3', f'{direc}/start.mp3')
-			# f.write('file start.mp3\n')
-			# for i in range(start_chapter, end_chapter + 1):
-			# 	shutil.copy(f'{short_direct}/chuong-{i}/full.mp3', f'{direc}/chuong-{i}.mp3')
-			# 	f.write(f'file chuong-{i}.mp3\n')
+		#chay xong thi an dong nay di nhe
+		try:
+			os.remove(direc + '/full.mp3')
+		except:
+			pass
+		# os.mkdir(direc)
+
+		
+		if os.path.exists(f'{direc}/full.mp3'):
+			print(f'chuong-{start_chapter}-{end_chapter} full.mp3 EXIST')
+		else:
+			f = open("{}/list.txt".format(direc), "w")
+			shutil.copy(f'{short_direct}/start.mp3', f'{direc}/start.mp3')
+			shutil.copy(f'{short_direct}/tao_chao.mp3', f'{direc}/tao_chao.mp3')
+			shutil.copy(f'{short_direct}/dau_cach.mp3', f'{direc}/dau_cach.mp3')
+			f.write('file start.mp3\n') # ấấn Ctrl / đđể ấấẩn hiêện dong nay 
+			f.write('file dau_cach.mp3\n')
+			print(is_first)
+			
+			
+			for i in range(start_chapter, end_chapter + 1):
+				print("??")
+				shutil.copy(f'{short_direct}/chuong-{i}/full.mp3', f'{direc}/chuong-{i}.mp3')
+				if is_first:
+					is_first = False
+				else:
+					f.write('file tao_chao.mp3\n')
+					f.write('file dau_cach.mp3\n')
+				f.write(f'file chuong-{i}.mp3\n')
+				f.write(f'file dau_cach.mp3\n')
+				print("????")
 
 			
-			# f.write('file end.mp3\n')
-			# shutil.copy(f'{short_direct}/end.mp3', f'{direc}/end.mp3')
-			# f.close()
-			# print('create list.txt successful')
-			# p = subprocess.run('ffmpeg -f concat -safe 0 -i {}/list.txt -c copy {}/full.mp3'.format(direc, direc))
+			f.write('file end.mp3\n')
+			shutil.copy(f'{short_direct}/end.mp3', f'{direc}/end.mp3')
+			f.close()
+			print('create list.txt successful')
+			p = subprocess.run('ffmpeg -f concat -safe 0 -i {}/list.txt -c copy {}/full.mp3'.format(direc, direc))
 		
 		if os.path.exists(f'{direc}/out.mp3'):
 			print('out.mp3 EXIST')
 		else:
 			shutil.copy(f'{short_direct}/background.mp3', f'{direc}/background.mp3')
-			subprocess.run(f'ffmpeg -i {direc}/full.wav -filter_complex "amovie={direc}/background.mp3:loop=0,asetpts=N/SR/TB[beep];[0][beep]amix=duration=shortest" {direc}/out.mp3')
-			os.remove(f'{direc}/full.wav')
-			# p = subprocess.run(f'ffmpeg -i {direc}/full.mp3 -filter_complex "amovie={direc}/background.mp3:loop=0,asetpts=N/SR/TB[beep];[0][beep]amix=duration=shortest,volume=10,dynaudnorm" {direc}/out.mp3')
+			subprocess.run(f'ffmpeg -i {direc}/full.mp3 -filter_complex "amovie={direc}/background.mp3:loop=0,asetpts=N/SR/TB[beep];[0][beep]amix=duration=shortest" {direc}/out.mp3')
+			# os.remove(f'{direc}/full.wav')
+			p = subprocess.run(f'ffmpeg -i {direc}/full.mp3 -filter_complex "amovie={direc}/background.mp3:loop=0,asetpts=N/SR/TB[beep];[0][beep]amix=duration=shortest,volume=10,dynaudnorm" {direc}/out.mp3')
 
 
 		remove_files(direc)
@@ -390,7 +420,7 @@ def concat(short_direct, start, end, step):
 	
 def run_all(short_direct, voice=voice, speed=speed, prosody=prosody):
 	if backup(short_direct):
-
+		print('ok')
 		# remove_files(short_direct)
 		result = download(short_direct, voice, speed, prosody)
 		if result:

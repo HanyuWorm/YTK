@@ -33,6 +33,9 @@ class TruyenCVSpider(scrapy.Spider):
         title = ' '.join(response.css('#js-truyencv-read-content > div.header > h2 ::text').extract())
         content = '. '.join(response.css('#js-truyencv-content ::text').extract())
 
+        text_file = f'data/{self.sub_url}/chuong-{title.replace(":", "").replace(",", "").split()[1]}.txt'
+        title_file = f'data/{self.sub_url}/chuong-{title.replace(":", "").replace(",", "").split()[1]}.title'
+
         content = re.sub("Truyện linh dị hay, đáng để đọc.*", "", content)
         with open(text_file, 'w', encoding='utf-8') as f:
             f.write(content)
