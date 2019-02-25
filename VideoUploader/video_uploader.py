@@ -187,7 +187,7 @@ if __name__ == '__main__':
         'snippet.title': '[Tác giả VN]Hệ thống đi lạc tu tiên ký ' + str(start_chapter)+' - '+str(end_chapter),
         'status.embeddable': '',
         'status.license': '',
-        'status.privacyStatus': '',
+        'status.privacyStatus': 'private',
         'status.publicStatsViewable': ''},
         media_file,
         part='snippet,status')

@@ -52,7 +52,7 @@
         "url" : "mao-son-troc-quy-nhan",
         "website" : "truyencv.com",
         "start_chapter" : 1,
-        "lastest_chapter": 3000,
+        "lastest_chapter": 20,
         "current_chapter": 0,
         "end_chapter": null,
         "chapter_per_video": 10,
@@ -60,9 +60,9 @@
 		"image": {
             "name": "image.jpg",
 			"font_family" : "arial.ttf",
-			"font_size" : 120,
-			"x" : 200,
-            "y" : 180,
+			"font_size" : 60,
+			"x" : 10,
+            "y" : 120,
             "color": {
                 "r": 200,
                 "g": 255,
@@ -88,219 +88,6 @@
 			"font_size" : 65,
 			"x" : 20,
             "y" : 50,
-            "color": {
-                "r": 255,
-                "g": 65,
-                "b": 44
-            }
-		}
-    }, 
-    "12-nu-than": {
-        "name" : "12-nu-than",
-        "url" : "12-nu-than",
-        "website" : "truyensex.tv",
-        "start_chapter" : 1,
-        "lastest_chapter": 200,
-        "current_chapter": 0,
-        "end_chapter": null,
-        "chapter_per_video": 10,
-        "voice": "ngoclam",
-		"status" : "done",
-		"image": {
-            "name": "image.jpg",
-			"font_family" : "arial.ttf",
-			"font_size" : 65,
-			"x" : 20,
-            "y" : 300,
-            "color": {
-                "r": 255,
-                "g": 65,
-                "b": 44
-            }
-		}
-    },
-	"chinh-phuc-gai-dep": {
-        "name" : "chinh-phuc-gai-dep",
-        "url" : "chinh-phuc-gai-dep",
-        "website" : "truyensex.tv",
-        "start_chapter" : 1,
-        "lastest_chapter": 80,
-        "current_chapter": 0,
-        "end_chapter": null,
-        "chapter_per_video": 10,
-        "voice": "ngoclam",
-        "status" : "done",
-		
-		"image": {
-            "name": "image.png",
-			"font_family" : "arial.ttf",
-			"font_size" : 65,
-			"x" : 270,
-            "y" : 80,
-            "color": {
-                "r": 255,
-                "g": 65,
-                "b": 44
-            }
-		}
-    },
-	"co-giao-mon-van": {
-        "name" : "co-giao-mon-van",
-        "url" : "co-giao-mon-van",
-        "website" : "truyensex.tv",
-        "start_chapter" : 1,
-        "lastest_chapter": 90,
-        "current_chapter": 0,
-        "end_chapter": null,
-        "chapter_per_video": 10,
-        "voice": "hatieumai",
-		"status" : "done",
-		"image": {
-            "name": "image.png",
-			"font_family" : "arial.ttf",
-			"font_size" : 65,
-			"x" : 400,
-            "y" : 100,
-            "color": {
-                "r": 255,
-                "g": 65,
-                "b": 44
-            }
-		}
-    },
-	"chi-thuy-hang-xom": {
-        "name" : "chi-thuy-hang-xom",
-        "url" : "chi-thuy-hang-xom",
-        "website" : "truyensex.tv",
-        "start_chapter" : 1,
-        "lastest_chapter": 38,
-        "current_chapter": 0,
-        "end_chapter": null,
-        "chapter_per_video": 10,
-		
-		"image": {
-            "name": "image.jpg",
-			"font_family" : "arial.ttf",
-			"font_size" : 65,
-			"x" : 20,
-            "y" : 300,
-            "color": {
-                "r": 255,
-                "g": 65,
-                "b": 44
-            }
-		}
-    },
-	"soi-san-moi": {
-        "name" : "soi-san-moi",
-        "url" : "soi-san-moi",
-        "website" : "truyensex.tv",
-        "start_chapter" : 1,
-        "lastest_chapter": 148,
-        "current_chapter": 0,
-        "end_chapter": null,
-        "chapter_per_video": 10,
-		
-		"image": {
-            "name": "image.jpg",
-			"font_family" : "arial.ttf",
-			"font_size" : 65,
-			"x" : 20,
-            "y" : 300,
-            "color": {
-                "r": 255,
-                "g": 65,
-                "b": 44
-            }
-		}
-    },
-	"cuc-pham-dam-duc": {
-        "name" : "cuc-pham-dam-duc",
-        "url" : "cuc-pham-dam-duc",
-        "website" : "truyensex.tv",
-        "start_chapter" : 1,
-        "lastest_chapter": 120,
-        "current_chapter": 0,
-        "end_chapter": null,
-        "chapter_per_video": 10,
-        "voice": "hatieumai",
-		
-		"image": {
-            "name": "image.jpg",
-			"font_family" : "arial.ttf",
-			"font_size" : 65,
-			"x" : 20,
-            "y" : 300,
-            "color": {
-                "r": 255,
-                "g": 65,
-                "b": 44
-            }
-		}
-    },
-	"cu-dung": {
-        "name" : "cu-dung",
-        "url" : "cu-dung",
-        "website" : "truyensex.tv",
-        "start_chapter" : 1,
-        "lastest_chapter": 199,
-        "current_chapter": 0,
-        "end_chapter": null,
-        "chapter_per_video": 10,
-		
-		"image": {
-            "name": "image.jpg",
-			"font_family" : "arial.ttf",
-			"font_size" : 65,
-			"x" : 20,
-            "y" : 300,
-            "color": {
-                "r": 255,
-                "g": 65,
-                "b": 44
-            }
-		}
-    },
-	"cau-chuyen-doi-toi": {
-        "name" : "cau-chuyen-doi-toi",
-        "url" : "cau-chuyen-doi-toi",
-        "website" : "truyensex.tv",
-        "start_chapter" : 1,
-        "lastest_chapter": 132,
-        "current_chapter": 0,
-        "end_chapter": null,
-        "chapter_per_video": 10,
-        "voice": "male",
-        "status" : "done",
-		"image": {
-            "name": "image.png",
-			"font_family" : "arial.ttf",
-			"font_size" : 65,
-			"x" : 20,
-            "y" : 360,
-            "color": {
-                "r": 255,
-                "g": 65,
-                "b": 44
-            }
-		}
-    },
-	"co-giao-mai": {
-        "name" : "co-giao-mai",
-        "url" : "co-giao-mai",
-        "website" : "truyensex.tv",
-        "start_chapter" : 1,
-        "lastest_chapter": 309,
-        "current_chapter": 0,
-        "end_chapter": null,
-        "chapter_per_video": 10,
-		
-		"image": {
-            "name": "image.png",
-			"font_family" : "arial.ttf",
-			"font_size" : 65,
-			"x" : 20,
-            "y" : 80,
             "color": {
                 "r": 255,
                 "g": 65,

@@ -22,7 +22,7 @@ def make_video(path, direct):
     # backup(direc)
     #full.mp3 not background music
     #out.mp3 otherwise
-    p = subprocess.run(f'ffmpeg -framerate 1 -loop 1 -i {path}{direct}/{direct}.png -i {path}{direct}/out.mp3 -c:v libx264 -c:a  aac -shortest {path}{direct}/out.mp4')
+    p = subprocess.run(f'ffmpeg -framerate 1 -loop 1 -i {path}{direct}/{direct}.png -i {path}{direct}/full.mp3 -c:v libx264 -c:a  aac -shortest {path}{direct}/out.mp4')
     print(f'success {direct}')
 
 with open('../config.json', encoding="utf-8") as json_data:

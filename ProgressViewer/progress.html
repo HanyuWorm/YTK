@@ -28,6 +28,11 @@
                 </tr>
             </thead>
             <tbody>
+                <tr>
+                    <td>{{item.chapter}}</td>
+                    <td></td>
+                    <td><button class="btn btn-primary" ng-click="makeImage()">Generate Image</button></td>
+                </tr>
                 <tr ng-repeat="item in progress">
                     <td>{{item.chapter}}</td>
                     <td ng-bind-html="item.crawler"></td>
@@ -36,7 +41,7 @@
                     <td ng-bind-html="item.audio_concat"></td>
                     <td ng-bind-html="item.audio_background"></td>
                     <td ng-bind-html="item.video"></td>
-                    <td>Doe</td>
+                    <td>Đang PT</td>
                 </tr>
             </tbody>
         </table>

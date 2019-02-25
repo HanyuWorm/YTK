@@ -100,7 +100,6 @@ app.controller('ProgressController', function($scope, $location) {
             $scope.end_mp3 = '<span class="badge badge-danger">end.mp3</span>'
         }
 
-
         arr = []
 
         for(let i = 1; i<= lastest_chapter; i+=10) {
@@ -123,6 +122,10 @@ app.controller('ProgressController', function($scope, $location) {
 
             // audio one chapter
             item.audio = '';
+
+            if (!fs.existsSync('./../data/' + project + '/chuong-'+start+'-'+end)){
+                fs.mkdirSync('./../data/' + project + '/chuong-'+start+'-'+end);
+            }
             
             for(let chapter = start; chapter <= end; chapter ++)
             {
@@ -171,6 +174,16 @@ app.controller('ProgressController', function($scope, $location) {
         }
         return arr;
         
+    }
+    $scope.makeImage = function() {
+        console.log($scope.project.name)
+        var watcher = spawn('crawler.exe', ['mao-son-troc-quy-nhan', 1, 3000], {cwd: '..'})
+        watcher.stdout.on('data', function (data) {
+            console.log('stdout: ' + data.toString());
+        });
+        watcher.stderr.on('data', function (data) {
+            console.log('stderr: ' + data.toString());
+        });
     }
 });
 

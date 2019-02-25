@@ -379,24 +379,24 @@ def concat(short_direct, start, end, step):
 		else:
 			f = open("{}/list.txt".format(direc), "w")
 			shutil.copy(f'{short_direct}/start.mp3', f'{direc}/start.mp3')
-			shutil.copy(f'{short_direct}/tao_chao.mp3', f'{direc}/tao_chao.mp3')
-			shutil.copy(f'{short_direct}/dau_cach.mp3', f'{direc}/dau_cach.mp3')
+			# shutil.copy(f'{short_direct}/tao_chao.mp3', f'{direc}/tao_chao.mp3')
+			# shutil.copy(f'{short_direct}/dau_cach.mp3', f'{direc}/dau_cach.mp3')
 			f.write('file start.mp3\n') # ấấn Ctrl / đđể ấấẩn hiêện dong nay 
-			f.write('file dau_cach.mp3\n')
+			# f.write('file dau_cach.mp3\n')
 			print(is_first)
 			
 			
 			for i in range(start_chapter, end_chapter + 1):
-				print("??")
+				# print("??")
 				shutil.copy(f'{short_direct}/chuong-{i}/full.mp3', f'{direc}/chuong-{i}.mp3')
-				if is_first:
-					is_first = False
-				else:
-					f.write('file tao_chao.mp3\n')
-					f.write('file dau_cach.mp3\n')
+				# if is_first:
+				# 	is_first = False
+				# else:
+				# 	f.write('file tao_chao.mp3\n')
+				# 	f.write('file dau_cach.mp3\n')
 				f.write(f'file chuong-{i}.mp3\n')
-				f.write(f'file dau_cach.mp3\n')
-				print("????")
+				# f.write(f'file dau_cach.mp3\n')
+				# print("????")
 
 			
 			f.write('file end.mp3\n')
@@ -408,10 +408,11 @@ def concat(short_direct, start, end, step):
 		if os.path.exists(f'{direc}/out.mp3'):
 			print('out.mp3 EXIST')
 		else:
-			shutil.copy(f'{short_direct}/background.mp3', f'{direc}/background.mp3')
-			subprocess.run(f'ffmpeg -i {direc}/full.mp3 -filter_complex "amovie={direc}/background.mp3:loop=0,asetpts=N/SR/TB[beep];[0][beep]amix=duration=shortest" {direc}/out.mp3')
-			# os.remove(f'{direc}/full.wav')
-			p = subprocess.run(f'ffmpeg -i {direc}/full.mp3 -filter_complex "amovie={direc}/background.mp3:loop=0,asetpts=N/SR/TB[beep];[0][beep]amix=duration=shortest,volume=10,dynaudnorm" {direc}/out.mp3')
+			print('')
+			# shutil.copy(f'{short_direct}/background.mp3', f'{direc}/background.mp3')
+			# subprocess.run(f'ffmpeg -i {direc}/full.mp3 -filter_complex "amovie={direc}/background.mp3:loop=0,asetpts=N/SR/TB[beep];[0][beep]amix=duration=shortest" {direc}/out.mp3')
+			# # os.remove(f'{direc}/full.wav')
+			# p = subprocess.run(f'ffmpeg -i {direc}/full.mp3 -filter_complex "amovie={direc}/background.mp3:loop=0,asetpts=N/SR/TB[beep];[0][beep]amix=duration=shortest,volume=10,dynaudnorm" {direc}/out.mp3')
 
 
 		remove_files(direc)
